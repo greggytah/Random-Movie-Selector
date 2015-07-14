@@ -1,15 +1,14 @@
-var browserify = require('browserify-middleware')
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
-//provide a browserified file at a path
-var shared = ['mithril']
-app.get('/js/vendor-bundle.js', browserify(shared))
-app.get('/js/app-bundle.js', browserify('./client/app-bundle/index.js', { external: shared }))
+app.get('/', function (req, res) {
+  res.send('Here is my movie app!');
+});
 
-// Non-js static files
-app.use(express.static('client/public'))
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
 
-var port = process.env.PORT || 4000
-app.listen(port)
-console.log("Listening on port", port)
+  console.log('Example app listening at http://%s:%s', host, port);
+});
+
