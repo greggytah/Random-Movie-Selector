@@ -1,17 +1,9 @@
-# Director Meet Actor
+# Random Movie Generator
 
-Movie Director - Movie Actor App
+Random Movie Generator App
 
-	Purpose:  To find an actor/actress that a movie director has worked with more than any other.  Produces hyperlinks of movie titles that can be clicked on and redirected to the IMDB page for that particular movie.
+	Purpose:  To find a movie based on a specific genre.  Once a genre is chosen, a new page opens to the url of The Movie Database of a particular movie title within that genre.  
 
-	Uses TheMovieDatabase(https://www.themoviedb.org/) API key.
+	Uses TheMovieDatabase(https://www.themoviedb.org/)
 
-Frameworks/Libraries Used
 
-	Angular - to handle the front-end
-	MongoDB - to handle the database
-	Express - to handle the server; may stick to just client-side
-
-Getting Started
-
-	Visit localhost: 3000
