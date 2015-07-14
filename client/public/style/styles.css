@@ -1,14 +1,14 @@
 
 html {
   width: 1300px;
-  height: 1200px;
+  height: 1000px;
   display: block;
   position: relative;
 }
 
 html::after {
   content: "";
-  background: url(hollywood-sign.jpg) no-repeat center center fixed;
+  background: url(../assets/hollywood-sign.jpg) no-repeat center center fixed;
   background-size: cover;
   opacity: 0.5;
   top: 0;
@@ -17,4 +17,17 @@ html::after {
   right: 0;
   position: absolute;
   z-index: -1;   
+}
+
+h1 {
+	font-family: comic sans ms;
+	color: black;
+	font-size: 350%;
+    border:3px solid black;
+    padding:5px;
+    margin:20px;
+}
+
+h2 {
+	color: black;
 }

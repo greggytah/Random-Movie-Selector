@@ -1,9 +1,4 @@
 
-
-var randomID = function () {
-	return Math.floor(Math.random() * 10);
-}
-
 var actionGenre = ["941", "76341", "245891", "272", "37724",
 					"10999", "9874", "10117", "25553", "94329"];
 
@@ -27,6 +22,9 @@ var dramaGenre = ["244786", "87492", "85350", "24226", "14554",
 
 var familyGenre = ["252", "9836", "9969", "227973", "11459",
 				   "10054", "3050", "11774", "601", "124324"];
+
+var foreignGenre = ["406", "10086", "12259", "439", "1391",
+					"108", "64", "346", "11423", "2000"];
 
 var historyGenre = ["612", "14292", "424", "197", "98",
 					"42668", "76203", "1495", "3131", "3291"];
@@ -56,63 +54,86 @@ var westernGenre = ["3114", "3089", "42491", "11969", "4512",
 					"391", "576", "301", "980", "8879"];
 
 
-// var theMovieDB = {
+var randomId = function (array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
 
-// 	var apiKey = "?api_key=da879f7e8e7d62569d51c4f04ec32b8a"
-
-// 	var baseUrl = "http://api.themoviedb.org/3/movie/"
-
-// 	var genres = ["Action", "Adventure", "Animation", "Comedy"
-// 					"Crime", "Documentary", "Drama", "Family",
-// 					"History", "Horror", "Music", "Mystery",
-// 					"Romance", "Science Fiction", "TV Movie", "Thriller",
-// 					"War", "Western"]
-
-// 	var fullUrl = baseUrl + movieID + apiKey;
-// }
-
-var baseUrl = "https://www.themoviedb.org/movie/"
 
 $(document).ready(function() {
+	var baseUrl = "https://www.themoviedb.org/movie/",
+		apiKey = "?api_key=da879f7e8e7d62569d51c4f04ec32b8a";
+
 	$("#genre").change(function() {
 		if($(this).val() === "Action") {
-			window.location = baseUrl + "941-lethal-weapon"
+			window.open(baseUrl + randomId(actionGenre))
 		} else if($(this).val() === "Adventure") {
-			window.location = baseUrl + "120-the-lord-of-the-rings-the-fellowship-of-the-ring"
+			window.open(baseUrl + randomId(adventureGenre));
 		} else if($(this).val() === "Animation") {
-			window.location = baseUrl + "9806-the-incredibles"
+			window.open(baseUrl + randomId(animationGenre));
 		} else if($(this).val() === "Comedy") {
-			window.location = baseUrl + "11072-blazing-saddles"
+			window.open(baseUrl + randomId(comedyGenre));
 		} else if($(this).val() === "Crime") {
-			window.location = baseUrl + "1051-the-french-connection"
+			window.open(baseUrl + randomId(crimeGenre));
 		} else if($(this).val() === "Documentary") {
-			window.location = baseUrl + "84342-something-from-nothing-the-art-of-rap"
+			window.open(baseUrl + randomId(documentaryGenre));
 		} else if($(this).val() === "Drama") {
-		  	window.location = baseUrl + "244786-whiplash"
+		  	window.open(baseUrl + randomId(dramaGenre));
 		} else if($(this).val() === "Family") {
-			window.location = baseUrl + "252-willy-wonka-the-chocolate-factory"
+			window.open(baseUrl + randomId(familyGenre));
+		} else if($(this).val() === "Foreign") {
+			window.open(baseUrl + randomId(foreignGenre))
 		} else if($(this).val() === "History") {
-			window.location = baseUrl + "612-munich"
+			window.open(baseUrl + randomId(historyGenre));
 		} else if($(this).val() === "Horror") {
-			window.location = baseUrl + "9552-the-exorcist"
+			window.open(baseUrl + randomId(horrorGenre));
 		} else if($(this).val() === "Music") {
-			window.location = baseUrl + "1725"
+			window.open(baseUrl + randomId(musicGenre));
 		} else if($(this).val() === "Mystery") {
-			window.location = baseUrl + "2649-the-game"
+			window.open(baseUrl + randomId(mysteryGenre));
 		} else if($(this).val() === "Romance") {
-			window.location = baseUrl + "19913-500-days-of-summer"
+			window.open(baseUrl + randomId(romanceGenre));
 		} else if($(this).val() === "Science Fiction") {
-			window.location = baseUrl + "840-close-encounters-of-the-third-kind"
+			window.open(baseUrl + randomId(scienceFictionGenre));
 		} else if($(this).val() === "Thriller") {
-			window.location = baseUrl + "210577-gone-girl"
+			window.open(baseUrl + randomId(thrillerGenre));
 		} else if($(this).val() === "War") {
-			window.location = baseUrl + "28-apocalypse-now"
+			window.open(baseUrl + randomId(warGenre));
 		} else if($(this).val() === "Western") {
-			window.location = baseUrl + "3114-the-searchers"
+			window.open(baseUrl + randomId(westernGenre));
 		}
 	})
 })
-	
+
+// $(document).ready(function() {
+//     var url = 'http://api.themoviedb.org/3/',
+//         mode = 'genre/',
+//         endMode = '/movies',
+//         genreId,
+//         key = '?api_key=da879f7e8e7d62569d51c4f04ec32b8a';
+
+//     $('button').click(function() {
+//         var input = $('#movie').val(),
+//             genreId = encodeURI(input);
+//         $.ajax({
+//             type: 'GET',
+//             url: url + mode + genreId + endMode + key,
+//             async: false,
+//             jsonpCallback: 'testing',
+//             contentType: 'application/json',
+//             dataType: 'jsonp',
+//             success: function(json) {
+//                 console.dir(json);
+//             },
+//             error: function(e) {
+//                 console.log("Error");
+//             }
+//         });
+//     });
+// });
+
+// var randomTitle = function () {
+
+// }
 
 
 //user selects a genre
@@ -121,5 +142,5 @@ $(document).ready(function() {
 
 
 //return the movie title as a clickable link that brings user to the page for that movie
-//Optional: saves the move to a Mongo database
+//Optional: saves the movie to a Mongo database
 
